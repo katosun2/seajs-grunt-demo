@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>a Seajs example width grunt build tool</title>
+</head>
+<body>
+</body>
+</html>
+<script type="text/javascript" src="../js/sealib/seajs/seajs/3.0.0/sea.js"></script>
+<script type="text/javascript" src="../js/demo1/seajs-config.js"></script>
+<script type="text/javascript">
+// For development
+if (location.href.indexOf("?dev") > 0) {
+	seajs.use("demo1/src/demo1.js");
+}
+// For production
+else {
+	seajs.use("demo1/dist/demo1");
+}
+</script>
