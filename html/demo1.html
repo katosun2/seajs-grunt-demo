@@ -2,17 +2,27 @@
 <html>
 <head>
 <meta charset="UTF-8" />
-<title>a Seajs example width grunt build tool</title>
+<title>a seajs tpl</title>
 </head>
 <body>
 </body>
 </html>
-<script type="text/javascript" src="../js/sealib/seajs/seajs/3.0.0/sea.js"></script>
-<script type="text/javascript" src="../js/demo1/seajs-config.js"></script>
+<script type="text/javascript" src="../js/sealib/seajs/2.3.0/sea.js"></script>
 <script type="text/javascript">
+ seajs.config({
+ 	// Sea.js 的基础路径
+ 	base: '../js/',
+	alias : {
+		kg : 'http://static.kgimg.com/common/js-lib/min/base-min.js?abc=1'
+	},
+	map : [
+		[/^(.*\.(?:css|js))(.*)$/i, '$1?t=20140306']
+	]
+ });
+
 // For development
 if (location.href.indexOf("?dev") > 0) {
-	seajs.use("demo1/src/demo1.js");
+	seajs.use("demo1/src/demo1");
 }
 // For production
 else {

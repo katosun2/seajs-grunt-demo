@@ -1,1 +1,12 @@
-/** LastChange:  Monday, September 29, 2014 */define("demo1/dist/demo1",["./hello","./write","sealib/kg/kg/2.0.0/base-min","good"],function(a){var b=a("./hello"),c=a("./write"),d=(a("good"),new b,new c("It's work!"));d.write()}),define("demo1/dist/hello",[],function(a,b,c){var d=function(){this.msg="hello"};c.exports=d,console.log("hello")}),define("demo1/dist/write",["sealib/kg/kg/2.0.0/base-min"],function(a,b,c){var d=function(a){return this.msg=a||"",this},e=a("sealib/kg/kg/2.0.0/base-min");d.prototype.write=function(){console.log(e),console.log("write"),document.body.innerHTML=this.msg},c.exports=d});
+/**
+* @author       Richard Davey <rich@photonstorm.com>
+* @copyright    2014 Kugou.com
+* @license      
+*
+* @overview
+*
+* v1.0.0 "" - Built: Fri Oct 10 2014 22:05:09
+*
+*/
+
+define("demo1/dist/demo1",["./1","./2","http://static.kgimg.com/common/js-lib/min/base-min"],function(a){var b=a("./1"),c=a("./2");document.body.innerHTML=c(b.a)}),define("demo1/dist/1",[],function(a,b,c){c.exports={a:"hello world!"}}),define("demo1/dist/2",["http://static.kgimg.com/common/js-lib/min/base-min"],function(a,b,c){a("http://static.kgimg.com/common/js-lib/min/base-min"),c.exports=function(a){return a},console.log(Kg)});

@@ -1,29 +1,22 @@
 // 所有模块都通过 define 来定义
-define("demo1/dist/demo1-debug", [ "./hello-debug", "./write-debug", "sealib/kg/kg/2.0.0/base-min-debug", "good-debug" ], function(require, exports, module) {
-    var Hello = require("./hello-debug"), Write = require("./write-debug"), Good = require("good-debug"), _h = new Hello(), _w = new Write("It's work!");
-    _w.write();
+define("demo1/dist/demo1-debug", [ "./1-debug", "./2-debug", "http://static.kgimg.com/common/js-lib/min/base-min-debug" ], function(require, exports, module) {
+    var data = require("./1-debug");
+    var count = require("./2-debug");
+    document.body.innerHTML = count(data.a);
 });
 
 // 所有模块都通过 define 来定义
-define("demo1/dist/hello-debug", [], function(require, exports, module) {
-    var Hello = function() {
-        this.msg = "hello";
+define("demo1/dist/1-debug", [], function(require, exports, module) {
+    module.exports = {
+        a: "hello world!"
     };
-    module.exports = Hello;
-    console.log("hello");
 });
 
 // 所有模块都通过 define 来定义
-define("demo1/dist/write-debug", [ "sealib/kg/kg/2.0.0/base-min-debug" ], function(require, exports, module) {
-    var Write = function(msg) {
-        this.msg = msg || "";
-        return this;
+define("demo1/dist/2-debug", [ "http://static.kgimg.com/common/js-lib/min/base-min-debug" ], function(require, exports, module) {
+    require("http://static.kgimg.com/common/js-lib/min/base-min-debug");
+    module.exports = function(msg) {
+        return msg;
     };
-    var Kg = require("sealib/kg/kg/2.0.0/base-min-debug");
-    Write.prototype.write = function() {
-        console.log(Kg);
-        console.log("write");
-        document.body.innerHTML = this.msg;
-    };
-    module.exports = Write;
+    console.log(Kg);
 });
