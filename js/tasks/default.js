@@ -3,7 +3,6 @@
  *
  */
 module.exports = function(grunt) {
-	var fs = require('fs');
 	/**
 	 * 定义默认命令
 	 */
@@ -60,23 +59,6 @@ module.exports = function(grunt) {
 	grunt.registerTask('build', '编译项目', function(project, stage) {
 		var i = 0,
 		Fn = Function;
-
-		var tmpData = fs.readFileSync(__dirname + '/manifests/config-templete.json', 'utf8');
-		tmpData = tmpData.replace(/\{projectName\}/g, project);
-		fs.writeFileSync(__dirname + '/manifests/config.json', tmpData);
-
-		var loadConfig = require('load-grunt-config');
-
-		loadConfig(grunt, {
-			configPath: __dirname + '/options',
-			config: {
-				project_name : project, //项目名称
-				release_dir: 'build', //发布目录
-				temp_dir: '.build', //临时目录
-				compile_dir: 'dist', //编译后目录
-				banner: require('fs').readFileSync(__dirname + '/banner.txt', 'utf8')
-			}
-		});
 
 		if (stage) {
 			stage = (new Fn("return " + stage))();
