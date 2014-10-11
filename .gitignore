@@ -1,1 +1,3 @@
 *.bat
+js/node_modules/
+!js/node_modules/grunt-contrib-transport/

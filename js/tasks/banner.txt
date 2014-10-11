@@ -2,10 +2,7 @@
 * @author       Richard Davey <rich@photonstorm.com>
 * @copyright    2014 Kugou.com
 * @license      
-*
 * @overview
-*
 * v<%= package.version %> "<%= package.release %>" - Built: <%= grunt.template.today() %>
-*
 */
 
