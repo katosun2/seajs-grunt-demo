@@ -1,5 +1,5 @@
 /**
-* @author       Richard Davey <rich@photonstorm.com>
+* @author       Boat <neko@imiku.com>
 * @copyright    2014 Kugou.com
 * @license      
 * @overview
