@@ -8,7 +8,7 @@ module.exports = function(grunt) {
 	var loadConfig = require('load-grunt-config'),
 	fs = require('fs');
 
-	loadConfig(grunt, {
+	/*loadConfig(grunt, {
 		configPath: __dirname + '/tasks/options',
 		config: {
 			release_dir: 'build', //发布目录
@@ -16,7 +16,7 @@ module.exports = function(grunt) {
 			compile_dir: 'dist', //编译后目录
 			banner: require('fs').readFileSync(__dirname + '/tasks/banner.txt', 'utf8')
 		}
-	});
+	});*/
 
 	//load all grunt custom tasks
 	//载入自定义任务
