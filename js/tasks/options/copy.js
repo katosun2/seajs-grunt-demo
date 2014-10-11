@@ -1,4 +1,1 @@
-module.exports = {
-	//demo1: require('../../demo1/tasks/manifests/demo1').copy
-	demo1: []
-};
+module.exports = require('../manifests/config').copy;
