@@ -1,0 +1,68 @@
+{
+	"transport" : {
+		"options": {
+			"include" : "relative",
+			"alias": { },
+			"debug": false
+		},
+		"{projectName}" : {
+			"options": {
+				"idleading": "<%= project_name %>/<%= compile_dir %>/"
+			},
+			"files": [{
+				"expand": true,
+				"cwd": "js/<%= project_name %>/src",
+				"src": "**/*",
+				"filter": "isFile",
+				"dest": "js/<%= project_name %>/<%= temp_dir %>/"
+			}]
+		}
+	},
+	"concat" : {
+		"{projectName}" : {
+			"options": {
+				"include": "relative"
+			},
+			"files": [{
+				"expand": true,
+				"cwd": "js/<%= project_name %>/<%= temp_dir %>/",
+				"src": ["<%= project_name %>.js", "<%= project_name %>-debug.js"],
+				"dest": "js/<%= project_name %>/<%= compile_dir %>/"
+			}]
+		}
+	},
+	"jshint" : {
+		"src": [
+			"**/src/*.js",
+			"!node_modules/**/*",
+			"!sealib/**/*",
+			"!phaser/**/*"
+		],
+		"options": { 
+			"jshintrc": "./tasks/.jshintrc" 
+		},
+		"{projectName}" : {
+			"src" : ["js/<%= project_name %>/<%= temp_dir %>/*.js", "js/<%= project_name %>/<%= compile_dir %>/*.js"]
+		}
+	},
+	"uglify" : {
+		"{projectName}" : {
+			"options": {
+				"banner": "<%= banner %>"
+			},
+			"files": [{
+				"expand": true,
+				"cwd": "js/<%= project_name %>/<%= compile_dir %>",
+				"src": "**/<%= project_name %>.js",
+				"filter": "isFile",
+				"dest": "js/<%= project_name %>/<%= compile_dir %>/"
+			}]
+		}
+	},
+	"copy" : {
+		"{projectName}" : {}
+	},
+	"clean" : {
+		"{projectName}" : ["js/<%= project_name %>/<%= temp_dir %>"]
+	}
+}
