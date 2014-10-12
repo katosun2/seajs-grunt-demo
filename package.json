@@ -4,7 +4,8 @@
   "version": "1.0.0",
   "description": "kugou.com",
   "scripts": {
-    "grunt": "help"
+    "test": "NODE_ENV=test grunt help",
+    "prepublish": "grunt build:demo1"
   },
   "repository": {
     "type": "git",
@@ -22,14 +23,14 @@
   },
   "devDependencies": {
     "grunt": "^0.4.5",
-    "grunt-imiku-cmd-transport": "^0.1.0",
     "grunt-cmd-concat": "^0.2.7",
     "grunt-contrib-clean": "^0.6.0",
     "grunt-contrib-uglify": "^0.6.0",
-    "load-grunt-config": "^0.13.2",
+    "grunt-imiku-cmd-transport": "^0.1.5",
     "grunt-contrib-jshint": "^0.10.0",
     "grunt-text-replace": "^0.3.12",
     "grunt-contrib-copy": "^0.6.0",
-    "chalk": "^0.5.1"
+    "chalk": "^0.5.1",
+    "load-grunt-config": "^0.13.2"
   }
 }
