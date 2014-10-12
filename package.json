@@ -1,7 +1,7 @@
 {
   "family": "hiyou",
   "name": "games",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "kugou.com",
   "scripts": {
     "test": "NODE_ENV=test grunt help",
