@@ -17,8 +17,7 @@ module.exports = function(grunt) {
 	*/
 	var runIndexTask = function(project, num) {
 		if (num == 1) {
-			grunt.task.run('transport:sealib');
-			grunt.task.run(project ? ('transport:' + project) : 'transport');
+			grunt.task.run(['transport:sealib', project ? ('transport:' + project) : 'transport']);
 		} else if (num == 2) {
 			grunt.task.run(project ? ('concat:' + project) : 'concat');
 		} else if (num == 3) {
@@ -83,7 +82,7 @@ module.exports = function(grunt) {
 				runIndexTask(null, stage);
 			}
 		} else {
-			grunt.task.run(['transport:' + project, 'concat:' + project, 'jshint:' + project, 'uglify:' + project, 'copy:' + project, 'clean:' + project]);
+			grunt.task.run(['transport:sealib', 'transport:' + project, 'concat:' + project, 'jshint:' + project, 'uglify:' + project, 'copy:' + project, 'clean:' + project]);
 		}
 		console.log("");
 	});
