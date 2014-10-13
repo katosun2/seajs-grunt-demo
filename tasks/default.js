@@ -82,7 +82,7 @@ module.exports = function(grunt) {
 				runIndexTask(null, stage);
 			}
 		} else {
-			grunt.task.run(['transport:sealib', 'transport:' + project, 'concat:' + project, 'jshint:' + project, 'uglify:' + project, 'copy:' + project, 'clean:' + project]);
+			grunt.task.run([ 'transport:sealib', 'transport:' + project, 'concat:' + project, 'jshint:' + project, 'uglify:' + project, 'copy:' + project, 'clean:' + project]);
 		}
 		console.log("");
 	});
