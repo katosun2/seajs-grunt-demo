@@ -17,6 +17,7 @@ module.exports = function(grunt) {
 	*/
 	var runIndexTask = function(project, num) {
 		if (num == 1) {
+			grunt.task.run('transport:sealib');
 			grunt.task.run(project ? ('transport:' + project) : 'transport');
 		} else if (num == 2) {
 			grunt.task.run(project ? ('concat:' + project) : 'concat');
@@ -55,6 +56,7 @@ module.exports = function(grunt) {
 				project_name : project, //项目名称
 				release_dir: 'build', //发布目录
 				temp_dir: '.build', //临时目录
+				concat_tmp_dir : 'tmp',
 				compile_dir: 'dist', //编译后目录
 				banner: fs.readFileSync(__dirname + '/banner.txt', 'utf8')
 			}

@@ -5,6 +5,18 @@
 			"alias": { },
 			"debug": false
 		},
+		"sealib" : {
+			"options":{
+				"idleading": ""
+			},
+			"files" :[{
+				"expand": true,
+				"cwd": "js/",
+				"src": "sealib/**/*",
+				"filter": "isFile",
+				"dest": "js/<%= temp_dir %>/"
+			}]
+		},
 		"{projectName}" : {
 			"options": {
 				"idleading": "<%= project_name %>/<%= compile_dir %>/"
@@ -14,7 +26,7 @@
 				"cwd": "js/<%= project_name %>/src",
 				"src": "**/*",
 				"filter": "isFile",
-				"dest": "js/<%= project_name %>/<%= temp_dir %>/"
+				"dest": "js/<%= temp_dir %>/<%= project_name %>/<%= compile_dir %>/"
 			}]
 		}
 	},
@@ -25,9 +37,9 @@
 			},
 			"files": [{
 				"expand": true,
-				"cwd": "js/<%= project_name %>/<%= temp_dir %>/",
-				"src": ["<%= project_name %>.js", "<%= project_name %>-debug.js"],
-				"dest": "js/<%= project_name %>/<%= compile_dir %>/"
+				"cwd": "js/<%= temp_dir %>/",
+				"src": "**/*.js",
+				"dest": "js/<%= temp_dir %>/<%= concat_tmp_dir %>/"
 			}]
 		}
 	},
@@ -42,7 +54,7 @@
 			"jshintrc": "./tasks/.jshintrc" 
 		},
 		"{projectName}" : {
-			"src" : ["js/<%= project_name %>/<%= temp_dir %>/*.js", "js/<%= project_name %>/<%= compile_dir %>/*.js"]
+			"src" : ["js/<%= temp_dir %>/**/*.js"]
 		}
 	},
 	"uglify" : {
@@ -52,7 +64,7 @@
 			},
 			"files": [{
 				"expand": true,
-				"cwd": "js/<%= project_name %>/<%= compile_dir %>",
+				"cwd": "js/<%= temp_dir %>/<%= concat_tmp_dir %>/<%= project_name %>/<%= compile_dir %>",
 				"src": "**/<%= project_name %>.js",
 				"filter": "isFile",
 				"dest": "js/<%= project_name %>/<%= compile_dir %>/"
@@ -63,6 +75,6 @@
 		"{projectName}" : {}
 	},
 	"clean" : {
-		"{projectName}" : ["js/<%= project_name %>/<%= temp_dir %>"]
+		"{projectName}" : ["js/<%= temp_dir %>"]
 	}
 }

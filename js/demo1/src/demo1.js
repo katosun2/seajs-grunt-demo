@@ -7,7 +7,7 @@ define(function(require, exports, module) {
 	console.log(Kg);
 
 	var game = new Phaser.Game(400, 400, Phaser.AUTO, 'mygame'),
-	Boot = require('phasermod/boot'),
+	Boot = require('../../sealib/test/2.1.2/boot'),
 	Boot2 = require('phasermod1/2.1.2/preload');
 	
 	game.States = {};
