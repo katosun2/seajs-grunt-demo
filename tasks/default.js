@@ -38,7 +38,7 @@ module.exports = function(grunt) {
 	 * @param { String } 项目名称 
 	 * @param { Number } 编译阶段数
 	 */
-	grunt.registerTask('build', '编译项目', function(project, stage) {
+	grunt.registerTask('build', '编译项目', function(project, stage, initJsName) {
 		var i = 0,
 		Fn = Function;
 
@@ -57,6 +57,7 @@ module.exports = function(grunt) {
 				temp_dir: '.build', //临时目录
 				concat_tmp_dir : 'tmp',
 				compile_dir: 'dist', //编译后目录
+				init_js_name : initJsName || project, //入口文件名称
 				banner: fs.readFileSync(__dirname + '/banner.txt', 'utf8')
 			}
 		});

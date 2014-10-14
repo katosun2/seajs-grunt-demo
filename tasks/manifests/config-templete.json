@@ -65,7 +65,7 @@
 			"files": [{
 				"expand": true,
 				"cwd": "js/<%= temp_dir %>/<%= concat_tmp_dir %>/<%= project_name %>/<%= compile_dir %>",
-				"src": "**/<%= project_name %>.js",
+				"src": "**/<%= init_js_name %>.js",
 				"filter": "isFile",
 				"dest": "js/<%= project_name %>/<%= compile_dir %>/"
 			}]
