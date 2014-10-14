@@ -32,7 +32,7 @@
     
     "asi"           : false,    // Tolerate Automatic Semicolon Insertion (no semicolons).
     "boss"          : true,    // Tolerate assignments inside if, for & while. Usually conditions & loops are for comparison, not assignments.
-	"camelcase"     : true,   // Force all variable names to use either camelCase style or UPPER_CASE with underscores.
+	"camelcase"     : false,   // Force all variable names to use either camelCase style or UPPER_CASE with underscores.
     "debug"         : false,    // Allow debugger statements e.g. browser breakpoints.
     "eqnull"        : true,     // Tolerate use of `== null`.
 	"es3"           : true,     // Support legacy browser and javascript environments.
