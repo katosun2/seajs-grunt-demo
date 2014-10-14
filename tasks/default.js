@@ -66,6 +66,9 @@ module.exports = function(grunt) {
 			stage = (new Fn("return " + stage))();
 		}
 
+		//执行任务前，先删除编译目录
+		grunt.task.run('clean');
+
 		if (project != 'null' && stage) {
 			if (Object.prototype.toString.call(stage) === '[object Array]') {
 				for (i = 0, len = stage.length; i < len; i++) {
